@@ -2,11 +2,39 @@
 <html lang='en'>
 
 <head>
-  <meta charset='utf8'>
-  <title>RESTful P.JS</title>
-  <script src='./example-fetches.js'></script>
+    <meta charset='utf8'>
+    <title>RESTful P.JS</title>
+    <!--script src='./example-fetches.js'></!--script-->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body></body>
+<body>
+    <div id="container">
+        <h1>To Do List</h1>
+        <div class="add-div">
+            <input id="option" type="checkbox" name="field" value="option" class="largeCheckbox">
+            <input type="text" id="input-add">
+            <button id="button-primary" class="button-primary">Add</button>
+            <hr>
+        </div>
+        <div class='update-div'>
+            <input type="text" id="update-input" value="Enter your text " onclick="this.value='' ">
+            <input type="number" id="position" value='0' onfocus="this.value='' ">
+            <button id="button-change" class="button-change">Update</button>
+            <button id="button-delete" class="deleteButton">Delete All</button>
+        </div>
+        <div id="placeholder ">
+            <ul></ul>
+
+        </div>
+
+        <script src='./listener.js'></script>
+        <script src="./UI.js"></script>
+        <script src="./todo.js"></script>
+
+    </div>
+</body>
+
 
 </html>
