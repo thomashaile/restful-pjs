@@ -14,8 +14,10 @@ var Todo = {
                 }
             })
             .then(res => res.json())
+            .then(() => {
+                      UI.displayTodo();
+                })
             .catch(err => console.log('response', err));
-        UI.displayTodo();
     },
 
     //updating to do using patch
@@ -31,8 +33,10 @@ var Todo = {
                 }
             })
             .then(res => res.json())
+            .then(() => {
+                      UI.displayTodo();
+                })
             .catch(err => console.log('response', err));
-        UI.displayTodo();
     },
 
     //single toggle element
@@ -50,7 +54,6 @@ var Todo = {
                         "Content-type": "application/json; charset=UTF-8"
                     }
                 })
-                .then(res => res.json())
 
         } else {
             //else change to true
@@ -61,10 +64,12 @@ var Todo = {
                         "Content-type": "application/json; charset=UTF-8"
                     }
                 })
-                .then(res => res.json())
+               
         }
-
-        UI.displayTodo();
+            .then(res => res.json());
+            .then(() => {
+                      UI.displayTodo();
+                })
     },
 
 
@@ -73,10 +78,11 @@ var Todo = {
         try {
             const res = fetch(`/todos/${position}`, { method: 'DELETE' });
             const data = await res.json();
+                      UI.displayTodo();
+          
         } catch (err) {
             console.log('response', err);
         };
-        UI.displayTodo();
     },
 
     //toggle all 
@@ -106,6 +112,7 @@ var Todo = {
                         }
                     });
                     const data = await res.json();
+                     UI.displayTodo();
                 };
             }
 
@@ -120,12 +127,13 @@ var Todo = {
                         }
                     });
                     const data = await res.json();
+                     UI.displayTodo();
                 };
             }
         } catch (err) {
             console.log('response', err);
         };
-        UI.displayTodo();
+       
     },
 
 
@@ -139,10 +147,11 @@ var Todo = {
                     method: 'DELETE'
                 });
                 const data = await res.json();
+                UI.displayTodo();
             };
         } catch (err) {
             console.log('response', err);
         };
-        UI.displayTodo();
+        
     }
 }
